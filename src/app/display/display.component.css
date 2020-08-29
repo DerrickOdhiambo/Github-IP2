@@ -1,0 +1,14 @@
+.search {
+  background-image: url(../../assets/images/tom-coomer-de0P588zgls-unsplash.jpg);
+  height: 70vh;
+  background-position: center;
+  background-size: cover;
+}
+
+h3 {
+  font-family: "Alfa Slab One", cursive;
+  color: rgb(228, 228, 228);
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 70vh;
+  padding-top: 7rem;
+}
