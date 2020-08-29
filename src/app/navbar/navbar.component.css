@@ -1,0 +1,17 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+i {
+  font-size: 25px;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid black;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  color: #535d55;
+}
+span {
+  font-family: "Alfa Slab One", cursive;
+}
