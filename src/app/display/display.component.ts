@@ -8,6 +8,15 @@ import { User } from '../classes/user';
   styleUrls: ['./display.component.css'],
 })
 export class DisplayComponent implements OnInit {
+  user: User[] = [
+    {
+      name: 'Derrick Odhiambo',
+      id: 67064766,
+      avatar: 'https://avatars0.githubusercontent.com/u/67064766?v=4',
+      repo: 23,
+      followers: 1,
+    },
+  ];
   response: User[];
 
   constructor(private gitService: GitServiceService) {}
