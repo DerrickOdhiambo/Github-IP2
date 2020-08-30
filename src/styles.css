@@ -1,5 +1,5 @@
 @import "~bootstrap/dist/css/bootstrap.css";
-@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Modak&display=swap");
 body {
-  font-family: sans-serif;
+  font-family: "Balsamiq Sans", cursive;
 }
