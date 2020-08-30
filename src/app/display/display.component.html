@@ -7,11 +7,7 @@
     <div class="container">
       <form>
         <div class="form-group">
-          <input
-            type="text"
-            class="form-control"
-            #name
-          />
+          <input type="text" class="form-control" #name />
         </div>
         <div>
           <button type="submit" (click)="search(name.value)" class="btn">
@@ -22,8 +18,74 @@
     </div>
   </div>
 </div>
-<div class="container mt-3">
-  <div class="row">
-    <div class="col-md-5"></div>
+<div class="container display mt-5">
+  <h4 class="text-center">Search Profile</h4>
+  <div *ngIf="response" class="row display-row">
+    <div class="col-md-6">
+      <img src="{{ response.avatar_url }}" id="avatar" alt="Image" />
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <span><i class="far fa-user"></i></span> Name :
+              <span> {{ response.name }}</span>
+            </li>
+            <li class="list-group-item">
+              <span><i class="fas fa-id-card-alt"></i></span> Id :
+              <span> {{ response.id }}</span>
+            </li>
+            <li class="list-group-item">
+              <span><i class="far fa-folder-open"></i></span> No. of Repos :
+              <span>{{ response.public_repos }}</span>
+            </li>
+            <li class="list-group-item">
+              <span><i class="fas fa-users"></i></span> No. of Followers :
+              <span> {{ response.followers }}</span>
+            </li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <button class="btn">
+            Show Repositories <i class="far fa-arrow-alt-circle-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngFor="let user of user" class="row display-row">
+    <div class="col-md-6">
+      <img src="{{ user.avatar }}" id="avatar" alt="Image" />
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <span><i class="far fa-user"></i></span> Name :
+              <span> {{ user.name }}</span>
+            </li>
+            <li class="list-group-item">
+              <span><i class="fas fa-id-card-alt"></i></span> Id :
+              <span> {{ user.id }}</span>
+            </li>
+            <li class="list-group-item">
+              <span><i class="far fa-folder-open"></i></span> No. of Repos :
+              <span>{{ user.repo }}</span>
+            </li>
+            <li class="list-group-item">
+              <span><i class="fas fa-users"></i></span> No. of Followers :
+              <span> {{ user.followers }}</span>
+            </li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <button class="btn">
+            Show Repositories <i class="far fa-arrow-alt-circle-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
