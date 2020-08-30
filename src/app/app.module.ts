@@ -8,9 +8,10 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DisplayComponent } from './display/display.component';
 import { FooterComponent } from './footer/footer.component';
+import { RepoDetailsComponent } from './repo-details/repo-details.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, DisplayComponent, FooterComponent],
+  declarations: [AppComponent, NavbarComponent, DisplayComponent, FooterComponent, RepoDetailsComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
