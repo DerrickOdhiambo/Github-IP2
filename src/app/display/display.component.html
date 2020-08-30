@@ -7,7 +7,13 @@
     <div class="container">
       <form>
         <div class="form-group">
-          <input type="text" class="form-control" #name />
+          <input
+            type="text"
+            class="form-control"
+            #name
+            placeholder="Username..."
+            required
+          />
         </div>
         <div>
           <button type="submit" (click)="search(name.value)" class="btn">
@@ -18,7 +24,7 @@
     </div>
   </div>
 </div>
-<div class="container display mt-5">
+<div class="container display mt-3 mb-3">
   <h4 class="text-center">Search Profile</h4>
   <div *ngIf="response" class="row display-row">
     <div class="col-md-6">
@@ -88,4 +94,7 @@
       </div>
     </div>
   </div>
+</div>
+<div class="footer">
+  <app-footer></app-footer>
 </div>
