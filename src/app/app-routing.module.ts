@@ -5,7 +5,6 @@ import { RepoDetailsComponent } from './repo-details/repo-details.component';
 
 const routes: Routes = [
   { path: 'main', component: DisplayComponent },
-  { path: 'repo', component: RepoDetailsComponent },
   { path: '', redirectTo: '/main', pathMatch: 'full' },
 ];
 
@@ -14,4 +13,4 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
-export const routingComponents = [DisplayComponent, RepoDetailsComponent];
+export const routingComponents = [DisplayComponent];
