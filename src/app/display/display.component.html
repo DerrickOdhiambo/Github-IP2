@@ -10,13 +10,19 @@
           <input
             type="text"
             class="form-control"
+            [(ngModel)]="userName"
+            name="userName"
             #name
             placeholder="Username..."
             required
           />
         </div>
         <div>
-          <button type="submit" (click)="search(name.value)" class="btn">
+          <button
+            type="submit"
+            (click)="search(name.value); toogle()"
+            class="btn"
+          >
             <i class="fas fa-search"></i>Search
           </button>
         </div>
@@ -53,45 +59,89 @@
           </ul>
         </div>
         <div class="card-footer">
-          <button class="btn">
+          <button (click)="getRepository()" class="btn">
             Show Repositories <i class="far fa-arrow-alt-circle-right"></i>
           </button>
         </div>
       </div>
     </div>
   </div>
-  <div *ngFor="let user of user" class="row display-row">
-    <div class="col-md-6">
-      <img src="{{ user.avatar }}" id="avatar" alt="Image" />
-    </div>
-    <div class="col-md-6">
-      <div class="card">
-        <div class="card-body">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-              <span><i class="far fa-user"></i></span> Name :
-              <span> {{ user.name }}</span>
-            </li>
-            <li class="list-group-item">
-              <span><i class="fas fa-id-card-alt"></i></span> Id :
-              <span> {{ user.id }}</span>
-            </li>
-            <li class="list-group-item">
-              <span><i class="far fa-folder-open"></i></span> No. of Repos :
-              <span>{{ user.repo }}</span>
-            </li>
-            <li class="list-group-item">
-              <span><i class="fas fa-users"></i></span> No. of Followers :
-              <span> {{ user.followers }}</span>
-            </li>
-          </ul>
+  <div *ngIf="showMe">
+    <div *ngFor="let user of user" class="row display-row">
+      <div class="col-md-6">
+        <img src="{{ user.avatar }}" id="avatar" alt="Image" />
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <span><i class="far fa-user"></i></span> Name :
+                <span> {{ user.name }}</span>
+              </li>
+              <li class="list-group-item">
+                <span><i class="fas fa-id-card-alt"></i></span> Id :
+                <span> {{ user.id }}</span>
+              </li>
+              <li class="list-group-item">
+                <span><i class="far fa-folder-open"></i></span> No. of Repos :
+                <span>{{ user.repo }}</span>
+              </li>
+              <li class="list-group-item">
+                <span><i class="fas fa-users"></i></span> No. of Followers :
+                <span> {{ user.followers }}</span>
+              </li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <button class="btn">
+              <a routerLink="/repo" routerLinkActive="active"
+                >Show Repositories <i class="far fa-arrow-alt-circle-right"></i
+              ></a>
+            </button>
+          </div>
         </div>
-        <div class="card-footer">
-          <button class="btn">
-            <a routerLink="/repo" routerLinkActive="active"
-              >Show Repositories <i class="far fa-arrow-alt-circle-right"></i
-            ></a>
-          </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <h3 class="text-center">Repositories</h3>
+  <div *ngFor="let repo of repos">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <span><i class="far fa-calendar"></i></span>
+                  Date Created :
+                  <span>{{ repo.created_at | date }}</span>
+                </li>
+                <li class="list-group-item">
+                  <span><i class="fas fa-file-signature"></i></span>
+                  Repo Name :
+                  <span>{{ repo.name }}</span>
+                </li>
+                <li class="list-group-item">
+                  <span><i class="far fa-clipboard"></i></span>
+                  Description :
+                  <span>{{ repo.description }}</span>
+                </li>
+                <li class="list-group-item">
+                  <span><i class="fas fa-cogs"></i></span>
+                  Technology Used :
+                  <span>{{ repo.language }}</span>
+                </li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a target="_blank" href="{{ repo.html_url }}"
+                ><button class="btn">View Repo</button></a
+              >
+            </div>
+          </div>
         </div>
       </div>
     </div>

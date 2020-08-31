@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GitServiceService } from '../git-service.service';
+import { RepoService } from '../repo.service';
+import { Repo } from '../classes/repo';
 import { User } from '../classes/user';
 
 @Component({
@@ -18,15 +20,34 @@ export class DisplayComponent implements OnInit {
     },
   ];
   response: User[];
+  repos: Repo[];
 
-  constructor(private gitService: GitServiceService) {}
+  constructor(
+    private gitService: GitServiceService,
+    private repoService: RepoService
+  ) {}
 
+  userName: string;
+
+  //repo http request
+  getRepository() {
+    this.repoService.getUserData(this.userName).subscribe((data) => {
+      console.log(data);
+      this.repos = data;
+    });
+  }
+
+  //user http request
   search(searchName: string) {
     console.log(searchName);
     this.gitService.searchUser(searchName).subscribe((response: any) => {
       console.log(response);
       this.response = response;
     });
+  }
+  showMe: boolean = true;
+  toogle() {
+    this.showMe = !this.showMe;
   }
   ngOnInit(): void {}
 }
