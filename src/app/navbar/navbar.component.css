@@ -20,3 +20,9 @@ span {
 h3 {
   color: #cc8a4d;
 }
+
+@media only screen and (max-width: 600px) {
+  i {
+    display: none;
+  }
+}

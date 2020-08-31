@@ -62,3 +62,27 @@ h4 {
 .repo-container {
   padding: 15px;
 }
+
+@media only screen and (max-width: 600px) {
+  h3 {
+    padding-top: auto;
+  }
+  input {
+    width: 100%;
+  }
+  #avatar {
+    height: 220px;
+    width: 220px;
+  }
+  .display-row {
+    padding: 0.1rem;
+    margin: 0.2rem;
+    border-radius: 0.3rem;
+  }
+  .search {
+    height: 70vh;
+  }
+  .overlay {
+    height: 70vh;
+  }
+}
