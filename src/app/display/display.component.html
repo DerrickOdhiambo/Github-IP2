@@ -5,7 +5,7 @@
       find a github user online!
     </h3>
     <div class="container">
-      <form #inputForm>
+      <form #inputForm="ngForm">
         <div class="form-group">
           <input
             type="text"
@@ -19,6 +19,7 @@
         </div>
         <div>
           <button
+            [disabled]="inputForm.form.invalid"
             type="submit"
             (click)="search(name.value); toogle()"
             class="btn"
