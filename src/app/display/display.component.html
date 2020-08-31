@@ -5,7 +5,7 @@
       find a github user online!
     </h3>
     <div class="container">
-      <form>
+      <form #inputForm>
         <div class="form-group">
           <input
             type="text"
@@ -59,7 +59,7 @@
           </ul>
         </div>
         <div class="card-footer">
-          <button (click)="getRepository()" class="btn">
+          <button (click)="getRepository(); clear()" class="btn">
             Show Repositories <i class="far fa-arrow-alt-circle-right"></i>
           </button>
         </div>
