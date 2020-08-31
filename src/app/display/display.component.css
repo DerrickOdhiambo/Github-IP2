@@ -56,3 +56,9 @@ h4 {
   height: 20vh;
   background-color: #5880a0;
 }
+.repo {
+  box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.75);
+}
+.repo-container {
+  padding: 15px;
+}
