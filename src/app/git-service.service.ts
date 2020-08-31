@@ -10,6 +10,8 @@ import { catchError } from 'rxjs/operators';
 export class GitServiceService {
   constructor(private http: HttpClient) {}
 
+  apiKey: any;
+
   searchUser(username): Observable<any> {
     return this.http
       .get(

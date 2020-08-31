@@ -33,6 +33,8 @@ export class RepoService {
   //   return promise;
   // }
 
+  apiKey: any;
+
   getUserData(userName: string): Observable<any> {
     return this.http.get(
       `https://api.github.com/users/${userName}/repos?token=${environment.apiKey}`
