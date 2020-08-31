@@ -40,17 +40,25 @@ export class DisplayComponent implements OnInit {
     });
   }
 
+  error: String;
+
   //user http request
   search(searchName: string) {
     console.log(searchName);
-    this.gitService.searchUser(searchName).subscribe((response: any) => {
-      console.log(response);
-      this.response = response;
-    });
+    this.gitService.searchUser(searchName).subscribe(
+      (response: any) => {
+        console.log(response);
+        this.response = response;
+      },
+      (error) => {
+        console.log(error);
+        this.error = error;
+      }
+    );
   }
   showMe: boolean = true;
   toogle() {
-    this.showMe = !this.showMe;
+    this.showMe = false;
   }
   ngOnInit(): void {}
 }
