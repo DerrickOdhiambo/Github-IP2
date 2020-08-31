@@ -1,27 +1,68 @@
-# Github
+# GithubFinder
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
+- This is an angular aplication that uses github api to search for github users online and display their repositories.
 
-## Development server
+## Project Live Link
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- [Click for to view the site]()
 
-## Code scaffolding
+## Setup / Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Install angular CLI (if you don't have it)
+- git clone https://github.com/DerrickOdhiambo/Github-IP2.git
+- cd Github-IP2
+- code .
+- run command ng serve --open in your terminal to open the project in localhost:4200
 
-## Build
+## Author
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- [Derrick Odhiambo](https://github.com/DerrickOdhiambo/Github-IP2)
 
-## Running unit tests
+## Behavior Driven Development
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+| Behavior                              | Input Example   | Output Example                                  |
+| ------------------------------------- | --------------- | ----------------------------------------------- |
+| Input name filled                     | DerrickOdhiambo | Github profile with an avatar image of the user |
+| User leaves the input field empty     |                 | The search button is deactivated                |
+| User clicks the show reository button |                 | A list of the user repositories is displayed    |
+| User clicks the show reository button |                 | Resets the input field                          |
+| User clicks on View Repo              |                 | User is redirected to the github page of repo   |
 
-## Running end-to-end tests
+## Technologies Used
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- Angular CLI
+- HTML & CSS
+- Bootstrap 4
 
-## Further help
+### Known Bugs
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- The error for a bad API request does not display in the DOM
+- The repository view does not reset when searching for a new user
+
+## Contact
+
+- odhiamboderrick56@gmail.com
+
+## License
+
+MIT License
+
+Copyright (c) [2020][derrick odhiambo]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
