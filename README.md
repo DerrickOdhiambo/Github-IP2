@@ -20,13 +20,14 @@
 
 ## Behavior Driven Development
 
-| Behavior                              | Input Example   | Output Example                                  |
-| ------------------------------------- | --------------- | ----------------------------------------------- |
-| Input name filled                     | DerrickOdhiambo | Github profile with an avatar image of the user |
-| User leaves the input field empty     |                 | The search button is deactivated                |
-| User clicks the show reository button |                 | A list of the user repositories is displayed    |
-| User clicks the show reository button |                 | Resets the input field                          |
-| User clicks on View Repo              |                 | User is redirected to the github page of repo   |
+| Behavior                              | Input Example   | Output Example                                                   |
+| ------------------------------------- | --------------- | ---------------------------------------------------------------- |
+| Input name filled with correct data   | DerrickOdhiambo | Github profile with an avatar image of the user                  |
+| Input name filled with incorrect data |                 | An alert with the error is displayed                             |
+| User leaves the input field empty     |                 | The search button is deactivated                                 |
+| User clicks Show Repositories button  |                 | A list of the user repositories is displayed                     |
+| User clicks Show Repositories button  |                 | Resets the input field                                           |
+| User clicks View Repo button          |                 | User is directed to the github page of that spewcific repository |
 
 ## Technologies Used
 
