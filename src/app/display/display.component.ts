@@ -28,10 +28,13 @@ export class DisplayComponent implements OnInit {
   ) {}
 
   userName: string;
-
+  clear() {
+    this.userName = '';
+  }
   //repo http request
   getRepository() {
-    this.repoService.getUserData(this.userName).subscribe((data) => {
+    const input = this.userName;
+    this.repoService.getUserData(input).subscribe((data) => {
       console.log(data);
       this.repos = data;
     });
