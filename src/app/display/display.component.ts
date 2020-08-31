@@ -53,6 +53,7 @@ export class DisplayComponent implements OnInit {
       (error) => {
         console.log(error);
         this.error = error;
+        alert(error);
       }
     );
   }
