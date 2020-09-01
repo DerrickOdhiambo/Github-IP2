@@ -10,11 +10,13 @@ import { catchError } from 'rxjs/operators';
 export class GitServiceService {
   constructor(private http: HttpClient) {}
 
-  apiKey: String = 'c54d354c4ae7ad08f5bf9966b746ca4d95d0a233';
+  apiKey: String;
 
   searchUser(username): Observable<any> {
     return this.http
-      .get(`https://api.github.com/users/${username}?token=${this.apiKey}`)
+      .get(
+        `https://api.github.com/users/${username}?token=${environment.apiKey}`
+      )
       .pipe(catchError(this.errorHandler));
   }
   errorHandler(error) {
