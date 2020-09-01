@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { Repo } from './classes/repo';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -39,5 +40,16 @@ export class RepoService {
     return this.http.get(
       `https://api.github.com/users/${userName}/repos?token=${environment.apiKey}`
     );
+  }
+
+  getRepo(repoName: any) {
+    return this.http
+      .get(
+        `https://api.github.com/search/repositories?q=${repoName}&order=asc?${environment.apiKey}`
+      )
+      .pipe(catchError(this.errorHandler));
+  }
+  errorHandler(error) {
+    return throwError(error.message || 'Server Error');
   }
 }

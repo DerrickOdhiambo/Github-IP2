@@ -1,0 +1,78 @@
+<ng-progress></ng-progress>
+<div class="search text-center">
+  <div class="overlay">
+    <h3 class="text-capitalize">
+      the fastest way to <br />
+      find a github Repo online!
+    </h3>
+    <div class="container">
+      <form #inputForm="ngForm">
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="repoName"
+            name="repoName"
+            #name
+            placeholder="Repo Name..."
+            required
+          />
+        </div>
+        <div>
+          <button
+            appButtoncolor
+            [disabled]="inputForm.form.invalid"
+            type="submit"
+            (click)="searchRepo(repoName)"
+            class="btn"
+          >
+            <i class="fas fa-search"></i>Search
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div>
+  <h4 class="text-center">Repositories</h4>
+  <hr />
+  <div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 repo-container" *ngFor="let repo of repositories">
+          <div class="card repo">
+            <div class="card-body">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <span><i class="far fa-calendar"></i></span>
+                  Date Created :
+                  <span>{{ repo.created_at | date }}</span>
+                </li>
+                <li class="list-group-item">
+                  <span><i class="fas fa-file-signature"></i></span>
+                  Repo Name :
+                  <span>{{ repo.name }}</span>
+                </li>
+                <li class="list-group-item">
+                  <span><i class="far fa-clipboard"></i></span>
+                  Description :
+                  <span>{{ repo.description }}</span>
+                </li>
+                <li class="list-group-item">
+                  <span><i class="fas fa-cogs"></i></span>
+                  Technology Used :
+                  <span>{{ repo.language }}</span>
+                </li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a target="_blank" href="{{ repo.html_url }}"
+                ><button appButtoncolor class="btn">View Repo</button></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

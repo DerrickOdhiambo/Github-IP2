@@ -1,0 +1,56 @@
+.search {
+  background-image: url(../../assets/images/tom-coomer-de0P588zgls-unsplash.jpg);
+  height: 60vh;
+  background-position: center;
+  background-size: cover;
+}
+
+h3 {
+  font-family: "Modak", cursive;
+  color: #db9554;
+  padding-top: 7rem;
+  font-size: 2.5rem;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 60vh;
+}
+input {
+  width: 36%;
+  margin: 0 auto;
+}
+h4 {
+  color: rgb(151, 10, 10);
+  text-decoration: underline;
+}
+.repo {
+  box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.75);
+}
+.repo-container {
+  padding: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+  h3 {
+    padding-top: auto;
+  }
+  input {
+    width: 100%;
+  }
+  #avatar {
+    height: 220px;
+    width: 220px;
+  }
+  .display-row {
+    padding: 0.1rem;
+    margin: 0.2rem;
+    border-radius: 0.3rem;
+  }
+  .search {
+    height: 70vh;
+  }
+  .overlay {
+    height: 70vh;
+  }
+}
