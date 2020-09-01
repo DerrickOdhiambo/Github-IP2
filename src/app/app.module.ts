@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { routingComponents } from './app-routing.module';
+import { ButtoncolorDirective } from './buttoncolor.directive';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { routingComponents } from './app-routing.module';
     NavbarComponent,
     FooterComponent,
     routingComponents,
+    ButtoncolorDirective,
   ],
   imports: [
     BrowserModule,
