@@ -62505,7 +62505,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./navbar/navbar.component */ "./src/app/navbar/navbar.component.ts");
 /* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
-/* harmony import */ var _display_display_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./display/display.component */ "./src/app/display/display.component.ts");
+/* harmony import */ var _buttoncolor_directive__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./buttoncolor.directive */ "./src/app/buttoncolor.directive.ts");
+/* harmony import */ var _display_display_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./display/display.component */ "./src/app/display/display.component.ts");
+
 
 
 
@@ -62537,10 +62539,52 @@ let AppModule = /*@__PURE__*/ (() => {
 (function () {
     (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"],
             _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_8__["NavbarComponent"],
-            _footer_footer_component__WEBPACK_IMPORTED_MODULE_9__["FooterComponent"], _display_display_component__WEBPACK_IMPORTED_MODULE_10__["DisplayComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+            _footer_footer_component__WEBPACK_IMPORTED_MODULE_9__["FooterComponent"], _display_display_component__WEBPACK_IMPORTED_MODULE_11__["DisplayComponent"], _buttoncolor_directive__WEBPACK_IMPORTED_MODULE_10__["ButtoncolorDirective"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _ngx_progressbar_core__WEBPACK_IMPORTED_MODULE_4__["NgProgressModule"], _ngx_progressbar_http_client__WEBPACK_IMPORTED_MODULE_5__["NgProgressHttpClientModule"]] });
+})();
+
+
+/***/ }),
+
+/***/ "./src/app/buttoncolor.directive.ts":
+/*!******************************************!*\
+  !*** ./src/app/buttoncolor.directive.ts ***!
+  \******************************************/
+/*! exports provided: ButtoncolorDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ButtoncolorDirective", function() { return ButtoncolorDirective; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+
+
+let ButtoncolorDirective = /*@__PURE__*/ (() => {
+    class ButtoncolorDirective {
+        constructor(elementRef, renderer) {
+            this.elementRef = elementRef;
+            this.renderer = renderer;
+            this.setBgColor('#db9554');
+        }
+        setBgColor(color) {
+            this.renderer.setStyle(this.elementRef.nativeElement, 'backgroundColor', color);
+        }
+        onMouseEnter() {
+            this.setBgColor('#5880a0');
+        }
+        onMouseLeave() {
+            this.setBgColor('#db9554');
+        }
+    }
+    ButtoncolorDirective.ɵfac = function ButtoncolorDirective_Factory(t) { return new (t || ButtoncolorDirective)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"])); };
+    ButtoncolorDirective.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({ type: ButtoncolorDirective, selectors: [["", "appButtoncolor", ""]], hostBindings: function ButtoncolorDirective_HostBindings(rf, ctx) {
+            if (rf & 1) {
+                _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("mouseenter", function ButtoncolorDirective_mouseenter_HostBindingHandler() { return ctx.onMouseEnter(); })("mouseleave", function ButtoncolorDirective_mouseleave_HostBindingHandler() { return ctx.onMouseLeave(); });
+            }
+        } });
+    return ButtoncolorDirective;
 })();
 
 
@@ -62561,8 +62605,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _repo_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../repo.service */ "./src/app/repo.service.ts");
 /* harmony import */ var _ngx_progressbar_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ngx-progressbar/core */ "./node_modules/@ngx-progressbar/core/__ivy_ngcc__/esm2015/ngx-progressbar-core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
-/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../footer/footer.component */ "./src/app/footer/footer.component.ts");
+/* harmony import */ var _buttoncolor_directive__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../buttoncolor.directive */ "./src/app/buttoncolor.directive.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../footer/footer.component */ "./src/app/footer/footer.component.ts");
+
 
 
 
@@ -62845,7 +62891,7 @@ let DisplayComponent = /*@__PURE__*/ (() => {
         ngOnInit() { }
     }
     DisplayComponent.ɵfac = function DisplayComponent_Factory(t) { return new (t || DisplayComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_git_service_service__WEBPACK_IMPORTED_MODULE_1__["GitServiceService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_repo_service__WEBPACK_IMPORTED_MODULE_2__["RepoService"])); };
-    DisplayComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DisplayComponent, selectors: [["app-display"]], decls: 32, vars: 5, consts: [[1, "search", "text-center"], [1, "overlay"], [1, "text-capitalize"], [1, "container"], ["inputForm", "ngForm"], [1, "form-group"], ["type", "text", "name", "userName", "placeholder", "Username...", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", ""], ["type", "submit", 1, "btn", 3, "disabled", "click"], [1, "fas", "fa-search"], [1, "container", "display", "mt-3", "mb-3"], [1, "text-center"], ["class", "row display-row", 4, "ngIf"], [4, "ngIf"], [1, "row"], ["class", "col-md-6 repo-container", 4, "ngFor", "ngForOf"], [1, "footer"], [1, "row", "display-row"], [1, "col-md-6"], ["id", "avatar", "alt", "Image", 3, "src"], [1, "card"], [1, "card-body"], [1, "list-group", "list-group-flush"], [1, "list-group-item"], [1, "far", "fa-user"], [1, "fas", "fa-id-card-alt"], [1, "far", "fa-folder-open"], [1, "fas", "fa-users"], [1, "card-footer"], [1, "btn", 3, "click"], [1, "far", "fa-arrow-alt-circle-right"], ["class", "row display-row", 4, "ngFor", "ngForOf"], ["target", "_blank", "href", "https://github.com/DerrickOdhiambo"], [1, "btn"], [1, "col-md-6", "repo-container"], [1, "card", "repo"], [1, "far", "fa-calendar"], [1, "fas", "fa-file-signature"], [1, "far", "fa-clipboard"], [1, "fas", "fa-cogs"], ["target", "_blank", 3, "href"]], template: function DisplayComponent_Template(rf, ctx) {
+    DisplayComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DisplayComponent, selectors: [["app-display"]], decls: 32, vars: 5, consts: [[1, "search", "text-center"], [1, "overlay"], [1, "text-capitalize"], [1, "container"], ["inputForm", "ngForm"], [1, "form-group"], ["type", "text", "name", "userName", "placeholder", "Username...", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", ""], ["appButtoncolor", "", "type", "submit", 1, "btn", 3, "disabled", "click"], [1, "fas", "fa-search"], [1, "container", "display", "mt-3", "mb-3"], [1, "text-center"], ["class", "row display-row", 4, "ngIf"], [4, "ngIf"], [1, "row"], ["class", "col-md-6 repo-container", 4, "ngFor", "ngForOf"], [1, "footer"], [1, "row", "display-row"], [1, "col-md-6"], ["id", "avatar", "alt", "Image", 3, "src"], [1, "card"], [1, "card-body"], [1, "list-group", "list-group-flush"], [1, "list-group-item"], [1, "far", "fa-user"], [1, "fas", "fa-id-card-alt"], [1, "far", "fa-folder-open"], [1, "fas", "fa-users"], [1, "card-footer"], ["appButtoncolor", "", 1, "btn", 3, "click"], [1, "far", "fa-arrow-alt-circle-right"], ["class", "row display-row", 4, "ngFor", "ngForOf"], ["target", "_blank", "href", "https://github.com/DerrickOdhiambo"], ["appButtoncolor", "", 1, "btn"], [1, "col-md-6", "repo-container"], [1, "card", "repo"], [1, "far", "fa-calendar"], [1, "fas", "fa-file-signature"], [1, "far", "fa-clipboard"], [1, "fas", "fa-cogs"], ["target", "_blank", 3, "href"]], template: function DisplayComponent_Template(rf, ctx) {
             if (rf & 1) {
                 const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "ng-progress");
@@ -62911,7 +62957,7 @@ let DisplayComponent = /*@__PURE__*/ (() => {
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
                 _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.repos);
             }
-        }, directives: [_ngx_progressbar_core__WEBPACK_IMPORTED_MODULE_3__["ɵa"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgForm"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["RequiredValidator"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgModel"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgForOf"], _footer_footer_component__WEBPACK_IMPORTED_MODULE_6__["FooterComponent"]], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["DatePipe"]], styles: [".search[_ngcontent-%COMP%] {\n  background-image: url('tom-coomer-de0P588zgls-unsplash.ce27eaa4d353c7998226.jpg');\n  height: 60vh;\n  background-position: center;\n  background-size: cover;\n}\n\nh3[_ngcontent-%COMP%] {\n  font-family: \"Modak\", cursive;\n  color: #db9554;\n  padding-top: 7rem;\n  font-size: 2.5rem;\n}\n\n.overlay[_ngcontent-%COMP%] {\n  background-color: rgba(0, 0, 0, 0.4);\n  height: 60vh;\n}\n\ninput[_ngcontent-%COMP%] {\n  width: 36%;\n  margin: 0 auto;\n}\n\nbutton[_ngcontent-%COMP%] {\n  background-color: #5880a0;\n}\n\n#avatar[_ngcontent-%COMP%] {\n  height: 300px;\n  width: 300px;\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n}\n\nspan[_ngcontent-%COMP%] {\n  color: #db9554;\n}\n\n.card[_ngcontent-%COMP%] {\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  font-family: \"Balsamiq Sans\", cursive;\n}\n\n.display-row[_ngcontent-%COMP%] {\n  border: 2px solid rgb(136, 136, 136);\n  padding: 1.5rem;\n  background-color: whitesmoke;\n  margin: 2rem;\n  border-radius: 1rem;\n  box-shadow: 0px 0px 31px 3px rgba(0, 0, 0, 0.75);\n}\n\nh4[_ngcontent-%COMP%] {\n  color: rgb(151, 10, 10);\n  text-decoration: underline;\n}\n\n.footer[_ngcontent-%COMP%] {\n  height: 20vh;\n  background-color: #5880a0;\n}\n\n.repo[_ngcontent-%COMP%] {\n  box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.75);\n}\n\n.repo-container[_ngcontent-%COMP%] {\n  padding: 15px;\n}\n\n@media only screen and (max-width: 600px) {\n  h3[_ngcontent-%COMP%] {\n    padding-top: auto;\n  }\n  input[_ngcontent-%COMP%] {\n    width: 100%;\n  }\n  #avatar[_ngcontent-%COMP%] {\n    height: 220px;\n    width: 220px;\n  }\n  .display-row[_ngcontent-%COMP%] {\n    padding: 0.1rem;\n    margin: 0.2rem;\n    border-radius: 0.3rem;\n  }\n  .search[_ngcontent-%COMP%] {\n    height: 70vh;\n  }\n  .overlay[_ngcontent-%COMP%] {\n    height: 70vh;\n  }\n}"] });
+        }, directives: [_ngx_progressbar_core__WEBPACK_IMPORTED_MODULE_3__["ɵa"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgForm"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["RequiredValidator"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgModel"], _buttoncolor_directive__WEBPACK_IMPORTED_MODULE_5__["ButtoncolorDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgForOf"], _footer_footer_component__WEBPACK_IMPORTED_MODULE_7__["FooterComponent"]], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_6__["DatePipe"]], styles: [".search[_ngcontent-%COMP%] {\n  background-image: url('tom-coomer-de0P588zgls-unsplash.ce27eaa4d353c7998226.jpg');\n  height: 60vh;\n  background-position: center;\n  background-size: cover;\n}\n\nh3[_ngcontent-%COMP%] {\n  font-family: \"Modak\", cursive;\n  color: #db9554;\n  padding-top: 7rem;\n  font-size: 2.5rem;\n}\n\n.overlay[_ngcontent-%COMP%] {\n  background-color: rgba(0, 0, 0, 0.4);\n  height: 60vh;\n}\n\ninput[_ngcontent-%COMP%] {\n  width: 36%;\n  margin: 0 auto;\n}\n\nbutton[_ngcontent-%COMP%] {\n  background-color: #5880a0;\n}\n\n#avatar[_ngcontent-%COMP%] {\n  height: 300px;\n  width: 300px;\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n}\n\nspan[_ngcontent-%COMP%] {\n  color: #db9554;\n}\n\n.card[_ngcontent-%COMP%] {\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  font-family: \"Balsamiq Sans\", cursive;\n}\n\n.display-row[_ngcontent-%COMP%] {\n  border: 2px solid rgb(136, 136, 136);\n  padding: 1.5rem;\n  background-color: whitesmoke;\n  margin: 2rem;\n  border-radius: 1rem;\n  box-shadow: 0px 0px 31px 3px rgba(0, 0, 0, 0.75);\n}\n\nh4[_ngcontent-%COMP%] {\n  color: rgb(151, 10, 10);\n  text-decoration: underline;\n}\n\n.footer[_ngcontent-%COMP%] {\n  height: 20vh;\n  background-color: #5880a0;\n}\n\n.repo[_ngcontent-%COMP%] {\n  box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.75);\n}\n\n.repo-container[_ngcontent-%COMP%] {\n  padding: 15px;\n}\n\n@media only screen and (max-width: 600px) {\n  h3[_ngcontent-%COMP%] {\n    padding-top: auto;\n  }\n  input[_ngcontent-%COMP%] {\n    width: 100%;\n  }\n  #avatar[_ngcontent-%COMP%] {\n    height: 220px;\n    width: 220px;\n  }\n  .display-row[_ngcontent-%COMP%] {\n    padding: 0.1rem;\n    margin: 0.2rem;\n    border-radius: 0.3rem;\n  }\n  .search[_ngcontent-%COMP%] {\n    height: 70vh;\n  }\n  .overlay[_ngcontent-%COMP%] {\n    height: 70vh;\n  }\n}"] });
     return DisplayComponent;
 })();
 
