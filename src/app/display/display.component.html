@@ -20,6 +20,7 @@
         </div>
         <div>
           <button
+            appButtoncolor
             [disabled]="inputForm.form.invalid"
             type="submit"
             (click)="search(name.value); toogle()"
@@ -61,7 +62,7 @@
           </ul>
         </div>
         <div class="card-footer">
-          <button (click)="getRepository(); clear()" class="btn">
+          <button appButtoncolor (click)="getRepository(); clear()" class="btn">
             Show Repositories <i class="far fa-arrow-alt-circle-right"></i>
           </button>
         </div>
@@ -97,7 +98,7 @@
           </div>
           <div class="card-footer">
             <a target="_blank" href="https://github.com/DerrickOdhiambo"
-              ><button class="btn">
+              ><button appButtoncolor class="btn">
                 Visit Profile
                 <i class="far fa-arrow-alt-circle-right"></i></button
             ></a>
@@ -141,7 +142,7 @@
             </div>
             <div class="card-footer">
               <a target="_blank" href="{{ repo.html_url }}"
-                ><button class="btn">View Repo</button></a
+                ><button appButtoncolor class="btn">View Repo</button></a
               >
             </div>
           </div>
